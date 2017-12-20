@@ -7,6 +7,7 @@ import it.universita.model.Persona;
 import it.universita.model.Studente;
 import it.universita.view.LoginFrame;
 import it.universita.view.StudenteFrame;
+import shop.view.HomeFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,11 +16,11 @@ import java.awt.event.ActionListener;
 /**
  * Created by roberto on 06/12/2017.
  */
-public class LoginListener implements ActionListener {
+public class HomeListener implements ActionListener {
 
-    private LoginFrame finestra;
+    private HomeFrame finestra;
 
-    public LoginListener(LoginFrame finestra) {
+    public HomeListener(HomeFrame finestra) {
         this.finestra = finestra;
     }
 

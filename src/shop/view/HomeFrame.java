@@ -96,7 +96,7 @@ public class HomeFrame extends JFrame {
 
     //promemoria classi annidate (nested)<<
     public class Mia {
-        AAAAAAAA    
+        AAAAAAAA
     }
 }
 */
