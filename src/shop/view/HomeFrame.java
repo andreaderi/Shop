@@ -1,12 +1,20 @@
 package shop.view;
 import shop.actionListeners.HomeListener;
 
-
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.MediaTracker;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.*;
 import java.awt.*;
 
 
 public class HomeFrame extends JFrame {
+
+    Image img;
+
     /*
     private JTextField txtUsername = new JTextField();
     private JPasswordField txtPassword = new JPasswordField();
@@ -14,7 +22,14 @@ public class HomeFrame extends JFrame {
 
 
     public HomeFrame() {
-        super("Nuova finestra");
+
+        super("BENVENUTO");
+
+        String path = "C:\\Users\\Andrea\\IdeaProjects\\Shop1\\Foto progetto\\Sfondo";
+        Image img= Toolkit.getDefaultToolkit().createImage(path);
+
+
+        loadImage(img);
         Container c = getContentPane();
 
 
@@ -27,21 +42,64 @@ public class HomeFrame extends JFrame {
         nord.add(new JLabel("Benvenuto in ONLINEDISCOUNT!"));
 
         JPanel centro = new JPanel();
-        centro.setLayout(new GridLayout(3,1));
-        JButton btnLogin=new JButton("LOGIN");
+        centro.setLayout(new GridLayout(3, 1));
+        JButton btnLogin = new JButton("LOGIN");
         btnLogin.addActionListener(listener);
         centro.add(btnLogin);
-        JButton btnRegistrazione=new JButton(("REGISTRAZIONE"));
+        JButton btnRegistrazione = new JButton(("REGISTRAZIONE"));
         btnRegistrazione.addActionListener(listener);
         centro.add(btnRegistrazione);
-        JButton btnCatalogo=new JButton(("VISUALIZZA CATALOGO"));
+        JButton btnCatalogo = new JButton(("VISUALIZZA CATALOGO"));
         btnRegistrazione.addActionListener(listener);
         centro.add(btnRegistrazione);
 
+        setSize(1000, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+
+    }
+
+
+    private void loadImage(Image img) {
+        try {
+            MediaTracker track = new MediaTracker(this);
+            track.addImage(img, 0);
+            track.waitForID(0);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    protected void paintComponent(Graphics g) {
+        setOpaque(false);
+        g.drawImage(img, 0, 0, null);
+        super.paintComponent(g);
+    }
+
+}
 
 
 
-        /*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
         JLabel lblUsername = new JLabel("Username:");
         JLabel lblPassword = new JLabel("Password:");
 
@@ -79,11 +137,8 @@ public class HomeFrame extends JFrame {
         setJMenuBar(bar);
 */
 
-        setSize(1000,600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
 
-    }
+
 /*
 
     public JTextField getTxtUsername() {
@@ -100,4 +155,5 @@ public class HomeFrame extends JFrame {
     }
 }
 */
-}
+
+
