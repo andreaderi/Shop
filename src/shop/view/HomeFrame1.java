@@ -140,6 +140,6 @@ package shop.view;
     }
 
 
-//Pascali pagliaccio
+//Pascali pagliaccio*2
 
 }
