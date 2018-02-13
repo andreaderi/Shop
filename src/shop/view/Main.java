@@ -1,11 +1,14 @@
-package shop.view;
+package Shop.view;
 
-import shop.business.SessionManager;
+import Shop.business.SessionManager;
+
+import com.itextpdf.text.DocumentException;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String args[]) {
-        HomeFrame HomeFrame = new HomeFrame();
-        SessionManager.getInstance().getSession().put("Finestra_Home", HomeFrame);
-
+    public static void main(String args[]) throws DocumentException, IOException {
+        LoginFrame loginFrame = new LoginFrame();
+        SessionManager.getInstance().getSession().put("Finestra Login", loginFrame);
+        new LoginFrame();
     }
 }

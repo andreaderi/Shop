@@ -1,17 +1,17 @@
-package shop.dbinterface;
+package Shop.dbinterface;
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Dbconnection {
     private static Connection db;       // La connessione col Database
-    private static boolean connesso;    // Flag che indica se la connessione � attiva o meno
+    private static boolean connesso;    // Flag che indica se la connessione è attiva o meno
     private static Dbconnection instance; //istanza statica della classe
 
     public static Dbconnection getInstance() {
         if(instance == null)
             instance = new Dbconnection();
         if(connesso != true)
-            connetti("universita", "root", "0000");
+            connetti("Shop", "root", "0000");
         return instance;
     }
 
